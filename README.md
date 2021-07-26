@@ -10,7 +10,7 @@
 
 <h2 align="center">
     <p>Aplicação funcionando em um iPhone</p>
-    <img src="/photos/agro_iphone.gif" height="480" width="280">
+    <img src="/photos/agro_iphone.gif" height="530" width="300">
 </h2>
 
 <br/>
