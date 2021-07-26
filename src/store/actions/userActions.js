@@ -43,7 +43,6 @@ export const tryLogin = (email, password, navigation, setIsLoading, showMessage)
             type: 'danger',
             autoHide: true,
             duration: 5000,
-            description: 'Tente novamente',
             icon: "danger",
             style: {
                 justifyContent: 'center', 

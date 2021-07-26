@@ -90,7 +90,7 @@ export default function LoginPage({ navigation } ) {
                         onChangeText={(value) => setPassword(value)}
                         ref={input2Ref}
                         onSubmitEditing={() => {
-                            dispatch(tryLogin(email, password, navigation, setIsLoading)); Keyboard.dismiss();}}
+                            dispatch(tryLogin(email, password, navigation, setIsLoading, showMessage)); Keyboard.dismiss();}}
                     />
                 </Form>
 
