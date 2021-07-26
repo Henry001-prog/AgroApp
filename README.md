@@ -5,7 +5,7 @@
 
 <h2 align="center">
     <p>Aplicação funcionando em um dispositivo Android</p>
-    <img src="/photos/agro_android.gif" height="480" width="280">
+    <img src="/photos/agro_android.gif" height="530" width="300">
 </h2>
 
 <h2 align="center">
