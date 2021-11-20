@@ -2,6 +2,7 @@ import React, { useEffect, useState , useRef} from 'react';
 import { Keyboard } from 'react-native';
 
 import firebase from 'firebase';
+import NetInfo from '@react-native-community/netinfo';
 
 import { tryLogin } from '../../store/actions';
 import { useDispatch } from 'react-redux';
@@ -62,6 +63,15 @@ export default function LoginPage({ navigation } ) {
             </Touchable>
         );
     }
+
+    const unsubscribe = NetInfo.addEventListener(state => {
+        console.log('Connection type', state.type);
+        //console.log('Connection type', state.details);
+        console.log('Is connected?', state.isConnected);
+      });
+      
+      // To unsubscribe to these update, just use:
+      unsubscribe();      
 
     return (
         <ScrollView>
