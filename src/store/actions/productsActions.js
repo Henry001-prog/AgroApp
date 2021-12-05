@@ -1,6 +1,7 @@
 import firebase from '@firebase/app';
 import '@firebase/database';
 import { Alert } from 'react-native';
+import api from '../../services/api';
 
 export const SET_PRODUCTS = 'SET_PRODUCTS';
 const setProducts = products => ({
@@ -9,9 +10,22 @@ const setProducts = products => ({
 });
 
 export const watchProducts = () => {
-    const { currentUser } = firebase.auth();
+    //const { currentUser } = firebase.auth();
     return dispatch => {
-        firebase
+        async function loadProducts() {
+            try {
+                const products = await api.get('/todos');
+                //const products = response.data;
+                console.log('Dados: ', products)
+                const action = setProducts(products);
+                dispatch(action);
+            } catch (error) {
+                alert("Não foi possível carregar os dados!");
+                return;
+            }
+        }
+        loadProducts();
+        /*firebase
             .database()
             .ref(`/users/${currentUser.uid}/products`)
             .on('value', snapshot => {
@@ -32,7 +46,7 @@ export const watchProducts = () => {
                 
 
                 
-            });
+        });*/
     }
 }
 
